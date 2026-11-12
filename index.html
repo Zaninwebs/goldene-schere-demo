@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goldene Schere – Friseursalon in Leverkusen</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Goldene Schere – Ihr Friseursalon in Leverkusen. Haarschnitte, Bartpflege, Farbe & Styling. Oulustraße 5, 51375 Leverkusen. Tel. 0214 5008550.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d0c0a;
+    --bg-2:#15130f;
+    --card:#1b1813;
+    --line:rgba(212,175,95,.18);
+    --gold:#d4af5f;
+    --gold-2:#f1d9a0;
+    --gold-3:#a8842f;
+    --text:#f4efe6;
+    --muted:#b2a993;
+    --radius:18px;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Manrope", system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+  .gold-text{background:linear-gradient(100deg,var(--gold-3),var(--gold-2) 45%,var(--gold) 70%,var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600;display:inline-flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:.005em}
+  h2{font-size:clamp(2.3rem,5vw,3.6rem);margin:14px 0 18px}
+  .lead{color:var(--muted);font-size:1.06rem;max-width:560px}
+  section{padding:clamp(80px,11vw,140px) 0;position:relative}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:.95rem;letter-spacing:.02em;transition:transform .25s, box-shadow .25s, background .25s, color .25s;cursor:pointer;border:0}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold) 50%,var(--gold-3));color:#1a1408;box-shadow:0 10px 30px -10px rgba(212,175,95,.6)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(212,175,95,.8)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.02)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-2)}
+  .btn svg{width:18px;height:18px}
+  .btn{white-space:nowrap}
+  .logo small{white-space:nowrap}
+  @media (min-width:901px) and (max-width:1180px){.links{gap:20px}.links a{font-size:.86rem}.links .btn{display:none}}
+
+  /* Nav */
+  header.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .35s, backdrop-filter .35s, border-color .35s;border-bottom:1px solid transparent}
+  header.nav.scrolled{background:rgba(13,12,10,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo svg{width:38px;height:38px}
+  .logo b{font-family:var(--serif);font-size:1.55rem;font-weight:700;letter-spacing:.02em}
+  .logo small{display:block;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:-4px}
+  .links{display:flex;gap:34px;align-items:center}
+  .links a{font-size:.92rem;color:var(--muted);transition:color .2s;position:relative}
+  .links a:not(.btn):hover{color:var(--gold-2)}
+  .links .btn{padding:11px 22px;font-size:.88rem}
+  .burger{display:none;background:none;border:0;color:var(--text);width:44px;height:44px;cursor:pointer}
+  .burger span{display:block;width:24px;height:2px;background:currentColor;margin:5px auto;transition:.3s}
+  @media (max-width:900px){
+    .burger{display:block}
+    .links{position:fixed;inset:78px 0 auto 0;flex-direction:column;gap:6px;padding:20px 16px 28px;background:rgba(13,12,10,.97);border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .4s}
+    .links.open{transform:none}
+    .links a{padding:12px;font-size:1.05rem}
+    header.nav.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    header.nav.menu-open .burger span:nth-child(2){opacity:0}
+    header.nav.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  }
+
+  /* Hero */
+  .hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:#120f0a url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;transform:scale(1.08);animation:zoom 18s ease-out forwards}
+  @keyframes zoom{to{transform:scale(1)}}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(ellipse at 75% 30%,rgba(212,175,95,.18),transparent 55%),
+    linear-gradient(90deg,rgba(13,12,10,.96) 0%,rgba(13,12,10,.82) 45%,rgba(13,12,10,.45) 100%),
+    linear-gradient(0deg,var(--bg) 0%,transparent 30%)}
+  .hero .wrap{position:relative;z-index:2}
+  .hero h1{font-size:clamp(3.2rem,9vw,7rem);margin:22px 0 22px;font-weight:600}
+  .hero h1 em{font-style:italic;font-weight:500}
+  .hero p{font-size:clamp(1.05rem,1.6vw,1.2rem);color:#d6ccb8;max-width:520px;margin-bottom:38px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:34px;margin-top:64px;padding-top:30px;border-top:1px solid var(--line);max-width:620px}
+  .hero-meta div{display:flex;flex-direction:column}
+  .hero-meta strong{font-family:var(--serif);font-size:2.2rem;line-height:1;color:var(--gold-2)}
+  .hero-meta span{font-size:.82rem;color:var(--muted);margin-top:6px}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:1rem}
+  .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scroll-hint i{width:1px;height:44px;background:linear-gradient(var(--gold),transparent);animation:drip 2s infinite}
+  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* Marquee */
+  .marquee{border-block:1px solid var(--line);background:var(--bg-2);overflow:hidden;padding:22px 0}
+  .marquee-track{display:flex;gap:56px;width:max-content;animation:scroll 32s linear infinite}
+  .marquee-track span{font-family:var(--serif);font-size:1.6rem;font-style:italic;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:56px}
+  .marquee-track span::after{content:"✦";color:var(--gold);font-style:normal;font-size:1rem}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,7vw,96px);align-items:center}
+  .about-img{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--card)}
+  .about-img img{width:100%;height:100%;object-fit:cover}
+  .about-img::after{content:"";position:absolute;inset:14px;border:1px solid rgba(241,217,160,.35);border-radius:12px;pointer-events:none}
+  .about-badge{position:absolute;right:-18px;bottom:40px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:20px 24px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7);z-index:2}
+  .about-badge strong{font-family:var(--serif);font-size:2.6rem;line-height:1;display:block}
+  .about-badge span{font-size:.8rem;color:var(--muted)}
+  .feature-list{display:grid;gap:22px;margin-top:36px}
+  .feature{display:flex;gap:18px;align-items:flex-start}
+  .feature .ic{flex:none;width:48px;height:48px;border-radius:14px;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);background:rgba(212,175,95,.06)}
+  .feature .ic svg{width:22px;height:22px}
+  .feature h3{font-family:var(--sans);font-size:1.02rem;font-weight:600;margin-bottom:2px}
+  .feature p{color:var(--muted);font-size:.94rem}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr}.about-badge{right:12px}}
+
+  /* Services */
+  .services{background:var(--bg-2)}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+  .tabs{display:inline-flex;gap:6px;padding:6px;border:1px solid var(--line);border-radius:999px;background:var(--bg);flex-wrap:wrap}
+  .tab{padding:10px 22px;border-radius:999px;font-size:.9rem;font-weight:600;color:var(--muted);background:none;border:0;cursor:pointer;font-family:inherit;transition:.25s}
+  .tab.active{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#1a1408}
+  .price-panel{display:none;grid-template-columns:repeat(2,1fr);gap:0 64px}
+  .price-panel.active{display:grid;animation:fade .5s}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .price-row{display:flex;align-items:baseline;gap:14px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .price-row h3{font-family:var(--serif);font-size:1.55rem;font-weight:600}
+  .price-row p{font-size:.88rem;color:var(--muted);margin-top:2px}
+  .price-row .dots{flex:1;border-bottom:1px dotted rgba(212,175,95,.35);transform:translateY(-6px);min-width:20px}
+  .price-row .price{font-family:var(--serif);font-size:1.6rem;color:var(--gold-2);white-space:nowrap}
+  .price-note{margin-top:30px;font-size:.85rem;color:var(--muted)}
+  @media (max-width:800px){.price-panel{grid-template-columns:1fr}.price-row h3{font-size:1.35rem}}
+
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:16px}
+  .g{border-radius:var(--radius);overflow:hidden;position:relative;background:var(--card)}
+  .g img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s;filter:saturate(.85)}
+  .g:hover img{transform:scale(1.07);filter:saturate(1.05)}
+  .g::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 50%);opacity:0;transition:.4s}
+  .g:hover::after{opacity:1}
+  .g.tall{grid-row:span 2}
+  .g.wide{grid-column:span 2}
+  @media (max-width:800px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}.g.wide{grid-column:span 2}}
+
+  /* Reviews */
+  .reviews{text-align:center;background:radial-gradient(ellipse at center,rgba(212,175,95,.09),transparent 65%)}
+  .big-rating{font-family:var(--serif);font-size:clamp(5rem,14vw,9rem);line-height:1;font-weight:600}
+  .big-stars{display:flex;justify-content:center;gap:6px;margin:14px 0 10px}
+  .big-stars svg{width:30px;height:30px}
+  .reviews .lead{margin:0 auto 34px}
+  .quote-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:60px 0 40px;text-align:left}
+  .quote{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+  .quote .q{font-family:var(--serif);font-size:3.5rem;line-height:.6;color:var(--gold)}
+  .quote h3{font-family:var(--sans);font-size:1.02rem;font-weight:600;margin:14px 0 6px}
+  .quote p{color:var(--muted);font-size:.94rem}
+  @media (max-width:800px){.quote-row{grid-template-columns:1fr}}
+
+  /* Visit */
+  .visit{background:var(--bg-2)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:24px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(28px,4vw,44px)}
+  .hours{list-style:none;margin-top:22px}
+  .hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:.98rem}
+  .hours li span:last-child{color:var(--muted)}
+  .hours li.today{color:var(--gold-2)}
+  .hours li.today span:last-child{color:var(--gold-2);font-weight:600}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;padding:6px 14px;border-radius:999px;border:1px solid var(--line);margin-top:10px}
+  .status i{width:8px;height:8px;border-radius:50%;background:#e06c5a;box-shadow:0 0 0 4px rgba(224,108,90,.15)}
+  .status.open i{background:#5fcf8a;box-shadow:0 0 0 4px rgba(95,207,138,.15)}
+  .contact-list{display:grid;gap:18px;margin:26px 0 30px}
+  .contact-list a,.contact-list div{display:flex;gap:16px;align-items:center}
+  .contact-list .ic{width:46px;height:46px;flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold)}
+  .contact-list .ic svg{width:20px;height:20px}
+  .contact-list small{display:block;color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+  .contact-list a:hover b{color:var(--gold-2)}
+  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:300px;margin-top:24px;filter:grayscale(1) invert(.92) contrast(.9) sepia(.25)}
+  .map iframe{width:100%;height:100%;min-height:300px;border:0;display:block}
+  @media (max-width:900px){.visit-grid{grid-template-columns:1fr}}
+
+  /* CTA */
+  .cta-band{padding:clamp(70px,9vw,110px) 0;text-align:center;position:relative;overflow:hidden}
+  .cta-band::before{content:"";position:absolute;inset:0;background:#120f0a url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=70") center/cover;opacity:.22}
+  .cta-band .wrap{position:relative}
+  .cta-band h2{font-size:clamp(2.4rem,6vw,4.4rem)}
+  .cta-band .hero-cta{justify-content:center;margin-top:30px}
+
+  footer{border-top:1px solid var(--line);padding:46px 0;color:var(--muted);font-size:.88rem}
+  .foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+  .foot nav{display:flex;gap:24px}
+  .foot nav a:hover{color:var(--gold-2)}
+
+  /* Floating call button (mobile) */
+  .fab{position:fixed;right:16px;bottom:16px;z-index:40;width:58px;height:58px;border-radius:50%;display:none;place-items:center;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#1a1408;box-shadow:0 12px 30px -8px rgba(212,175,95,.7)}
+  .fab svg{width:24px;height:24px}
+  @media (max-width:700px){.fab{display:grid}}
+
+  /* ===== Logo / Brand ===== */
+  :root{--sign-gold:#f3c535;--sign-orange:#e8892b}
+  .wordmark{font-family:"Anton",Impact,"Arial Narrow",sans-serif;display:inline-flex;align-items:center;gap:.08em;line-height:1;letter-spacing:.01em;text-transform:uppercase;transform:skewX(-9deg);white-space:nowrap}
+  .wordmark .w{background:linear-gradient(180deg,#fff0b0 0%,var(--sign-gold) 38%,#d9a21c 70%,#f7d36a 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 18px rgba(243,197,53,.25))}
+  .wordmark .w:first-child{background:linear-gradient(180deg,#fffaf0 0%,#efe2c2 50%,#d8c69a 100%);-webkit-background-clip:text;background-clip:text}
+  .wordmark svg{width:.95em;height:.95em;flex:none;transform:skewX(9deg)}
+  .logo .badge-sm{width:44px;height:48px}
+  .logo .wordmark{font-size:1.45rem}
+
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+  .hero .wordmark{font-size:clamp(3rem,8.5vw,7.4rem);margin:22px 0 10px}
+  .hero .tagline{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.6rem);font-style:italic;font-weight:500;margin-bottom:22px}
+  .hero-badge{position:relative;justify-self:center;width:min(100%,380px);aspect-ratio:200/220;animation:float 6s ease-in-out infinite}
+  .hero-badge::before{content:"";position:absolute;inset:-18%;background:radial-gradient(circle,rgba(243,197,53,.28),transparent 62%);z-index:-1;filter:blur(10px)}
+  .hero-badge svg{width:100%;height:100%;filter:drop-shadow(0 30px 50px rgba(0,0,0,.7))}
+  @keyframes float{50%{transform:translateY(-14px) rotate(-1.5deg)}}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-badge{order:-1;width:170px;justify-self:start;margin-bottom:-6px}}
+
+  .brand{overflow:hidden}
+  .brand-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,90px);align-items:center}
+  .brand-stage{position:relative;aspect-ratio:1;border-radius:28px;border:1px solid var(--line);display:grid;place-items:center;background:
+    radial-gradient(circle at 50% 42%,rgba(243,197,53,.22),transparent 55%),
+    repeating-linear-gradient(45deg,rgba(255,255,255,.015) 0 2px,transparent 2px 14px),var(--bg-2)}
+  .brand-stage svg{width:62%;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.65));transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .brand-stage:hover svg{transform:scale(1.04) rotate(-2deg)}
+  .brand-stage .corner{position:absolute;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+  .brand-stage .tl{top:20px;left:22px}.brand-stage .br{bottom:20px;right:22px}
+  .swatches{display:flex;gap:14px;margin:30px 0 8px;flex-wrap:wrap}
+  .sw{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--muted);padding:8px 14px 8px 8px;border:1px solid var(--line);border-radius:999px}
+  .sw i{width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.15)}
+  .sign{margin-top:70px;position:relative;border-radius:14px;background:linear-gradient(180deg,#141414,#050505);border:1px solid #2a2a2a;padding:clamp(18px,3vw,30px) clamp(18px,4vw,44px);display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06)}
+  .sign::after{content:"";position:absolute;left:6%;right:6%;bottom:-26px;height:26px;background:radial-gradient(ellipse at top,rgba(255,220,140,.35),transparent 70%);pointer-events:none}
+  .sign .wordmark{font-size:clamp(2rem,7vw,5.2rem)}
+  .sign svg.badge-sign{width:clamp(56px,9vw,110px);height:auto;flex:none}
+  .sign-cap{text-align:center;color:var(--muted);font-size:.82rem;margin-top:40px;letter-spacing:.06em}
+  @media (max-width:900px){.brand-grid{grid-template-columns:1fr}}
+  .foot .brandline{display:flex;align-items:center;gap:14px}
+  .foot .brandline svg{width:40px;height:44px}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1d9a0"/><stop offset=".5" stop-color="#d4af5f"/><stop offset="1" stop-color="#a8842f"/>
+    </linearGradient>
+    <linearGradient id="gy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0a8"/><stop offset=".45" stop-color="#f3c535"/><stop offset="1" stop-color="#c58e14"/>
+    </linearGradient>
+    <clipPath id="panelClip"><path d="M100 22 L172 50 Q178 52 178 59 L178 146 Q178 152 173 155 L104 196 Q100 199 96 196 L27 155 Q22 152 22 146 L22 59 Q22 52 28 50 Z"/></clipPath>
+    <path id="arcTop" d="M36 96 Q100 50 164 96" fill="none"/>
+    <path id="arcSub" d="M56 102 Q100 74 144 102" fill="none"/>
+    <!-- Wappen-Logo (nachgebaut nach dem Ladenschild) -->
+    <symbol id="badge" viewBox="0 0 200 220">
+      <path d="M100 6 L184 38 Q192 41 192 50 L192 152 Q192 160 185 165 L106 212 Q100 216 94 212 L15 165 Q8 160 8 152 L8 50 Q8 41 16 38 Z" fill="#0b0b0b" stroke="#e8892b" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M100 22 L172 50 Q178 52 178 59 L178 146 Q178 152 173 155 L104 196 Q100 199 96 196 L27 155 Q22 152 22 146 L22 59 Q22 52 28 50 Z" fill="#ece9e2"/>
+      <g clip-path="url(#panelClip)">
+        <path d="M18 150 Q45 128 70 140 Q92 150 112 136 Q140 118 182 140 L182 210 L18 210Z" fill="#b5b0a4"/>
+        <path d="M18 172 Q60 150 100 166 Q140 182 182 160 L182 210 L18 210Z" fill="#8a857a"/>
+        <g fill="none" stroke="#5e5b55" stroke-width="2.4" stroke-linecap="round">
+          <path d="M40 170 Q100 100 160 170"/><path d="M24 128 L176 128"/>
+          <path d="M55 128V155M70 128V144M85 128V137M100 128V135M115 128V137M130 128V144M145 128V155"/>
+        </g>
+      </g>
+      <text font-family="Anton, Impact, sans-serif" font-size="19" fill="#141414" letter-spacing="1.2"><textPath href="#arcTop" startOffset="50%" text-anchor="middle">GOLDENE SCHERE</textPath></text>
+      <text font-family="Manrope, sans-serif" font-size="8.5" font-weight="600" letter-spacing="4" fill="#4b4840"><textPath href="#arcSub" startOffset="50%" text-anchor="middle">Friseursalon</textPath></text>
+      <g stroke="#3a2a05" stroke-width="1" stroke-linejoin="round">
+        <path d="M76 160 L137 114 L141 118 L104 146Z" fill="url(#gy)"/>
+        <path d="M124 160 L63 114 L59 118 L96 146Z" fill="url(#gy)"/>
+      </g>
+      <g fill="none" stroke="url(#gy)" stroke-width="5.5"><circle cx="69" cy="170" r="10"/><circle cx="131" cy="170" r="10"/></g>
+      <circle cx="100" cy="142" r="3.6" fill="#141414" stroke="#f3c535" stroke-width="1.4"/>
+      <path d="M93 12 Q96 2 100 -2 Q101 6 106 10 Q102 9 100 14 Q97 9 93 12Z" fill="#e8892b" transform="translate(0 6)"/>
+    </symbol>
+    <!-- Kamm + Schere Icon für den Schriftzug -->
+    <symbol id="tools" viewBox="0 0 48 48">
+      <g transform="rotate(-40 24 24)" fill="url(#gy)"><rect x="4" y="19" width="40" height="6" rx="1.5"/><path d="M7 25h2v8H7zM11 25h2v8h-2zM15 25h2v8h-2zM19 25h2v8h-2zM23 25h2v8h-2zM27 25h2v8h-2zM31 25h2v8h-2zM35 25h2v8h-2zM39 25h2v8h-2z"/></g>
+      <g transform="rotate(40 24 24)"><path d="M6 23 L38 21.5 L40 24 L6 25Z" fill="url(#gy)"/><circle cx="42" cy="18" r="3.4" fill="none" stroke="url(#gy)" stroke-width="2"/><circle cx="42" cy="30" r="3.4" fill="none" stroke="url(#gy)" stroke-width="2"/></g>
+    </symbol>
+    <symbol id="star"viewBox="0 0 24 24"><path fill="url(#gg)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" aria-label="Goldene Schere – Startseite">
+      <svg class="badge-sm" viewBox="0 0 200 220" aria-hidden="true"><use href="#badge"/></svg>
+      <span><span class="wordmark"><span class="w">Goldene</span>&nbsp;<span class="w">Schere</span></span><small style="margin-top:4px">Friseursalon · Leverkusen</small></span>
+    </a>
+    <nav class="links" id="links">
+      <a href="#salon">Salon</a>
+      <a href="#marke">Marke</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="tel:+492145008550" class="btn btn-gold"><svg><use href="#phone"/></svg>Termin anfragen</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" role="img" aria-label="Friseursalon Innenansicht"></div>
+    <div class="wrap hero-grid">
+     <div>
+      <span class="eyebrow">Friseursalon in Leverkusen</span>
+      <h1 class="wordmark" aria-label="Goldene Schere"><span class="w">Goldene</span><svg aria-hidden="true"><use href="#tools"/></svg><span class="w">Schere</span></h1>
+      <p class="tagline">Präzision. <span class="gold-text">Stil. Handwerk.</span></p>
+      <p>Bei der Goldenen Schere bekommen Sie mehr als einen Haarschnitt – ein Erlebnis mit Liebe zum Detail, ehrlicher Beratung und einem Ergebnis, das Ihnen steht.</p>
+      <div class="hero-cta">
+        <a href="tel:+492145008550" class="btn btn-gold"><svg><use href="#phone"/></svg>0214 5008550</a>
+        <a href="#leistungen" class="btn btn-ghost">Leistungen &amp; Preise</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>4,6</strong><span><span class="stars">★★★★★</span><br>Google Bewertung</span></div>
+        <div><strong>83+</strong><span>zufriedene<br>Kundenbewertungen</span></div>
+        <div><strong>08:30</strong><span>früh geöffnet –<br>auch vor der Arbeit</span></div>
+      </div>
+     </div>
+     <div class="hero-badge"><svg viewBox="0 0 200 220" role="img" aria-label="Logo Goldene Schere"><use href="#badge"/></svg></div>
+    </div>
+    <div class="scroll-hint">Scroll<i></i></div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Haarschnitt</span><span>Fade &amp; Skin Fade</span><span>Bartpflege</span><span>Heißes Handtuch</span><span>Färben</span><span>Styling</span><span>Kinderhaarschnitt</span><span>Konturen</span>
+      <span>Haarschnitt</span><span>Fade &amp; Skin Fade</span><span>Bartpflege</span><span>Heißes Handtuch</span><span>Färben</span><span>Styling</span><span>Kinderhaarschnitt</span><span>Konturen</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="salon">
+    <div class="wrap about-grid">
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=80" alt="Friseur bei der Arbeit" loading="lazy">
+        <div class="about-badge"><strong class="gold-text">4,6 ★</strong><span>aus 83 Google-Bewertungen</span></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Über uns</span>
+        <h2>Ihr Salon in <span class="gold-text">Leverkusen</span></h2>
+        <p class="lead">Mitten in Leverkusen, in der Oulustraße, verbinden wir klassisches Friseurhandwerk mit aktuellen Trends. Ob zeitloser Herrenschnitt, perfekter Fade oder gepflegter Bart – wir nehmen uns Zeit für Sie.</p>
+        <div class="feature-list">
+          <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.2 15.8 19 4M15.8 15.8 5 4"/></svg></div><div><h3>Meisterhafte Schnitte</h3><p>Saubere Übergänge, exakte Konturen – jeder Schnitt individuell auf Sie abgestimmt.</p></div></div>
+          <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3c4 3 6 6 6 9a6 6 0 0 1-12 0c0-3 2-6 6-9z"/></svg></div><div><h3>Premium-Pflege</h3><p>Hochwertige Produkte und ein heißes Handtuch zum Abschluss – Entspannung inklusive.</p></div></div>
+          <div class="feature"><div class="ic"><svg><use href="#clock"/></svg></div><div><h3>Ohne langes Warten</h3><p>Rufen Sie kurz an und sichern Sie sich Ihren Wunschtermin.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND / LOGO -->
+  <section id="marke" class="brand">
+    <div class="wrap">
+      <div class="brand-grid">
+        <div class="brand-stage reveal">
+          <span class="corner tl">Unser Zeichen</span>
+          <svg viewBox="0 0 200 220" role="img" aria-label="Logo Goldene Schere"><use href="#badge"/></svg>
+          <span class="corner br">Est. Leverkusen</span>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Unsere Marke</span>
+          <h2>Ein Zeichen für <span class="gold-text">echtes Handwerk</span></h2>
+          <p class="lead">Die goldene Schere ist unser Versprechen: Jeder Schnitt wird mit Präzision und Sorgfalt ausgeführt. Die Landschaft im Wappen steht für unsere Verbundenheit mit der Region – wir sind Ihr Salon von nebenan, mitten in Leverkusen.</p>
+          <div class="swatches">
+            <span class="sw"><i style="background:linear-gradient(135deg,#fff0a8,#f3c535,#c58e14)"></i>Gold</span>
+            <span class="sw"><i style="background:#e8892b"></i>Orange</span>
+            <span class="sw"><i style="background:#0b0b0b"></i>Schwarz</span>
+            <span class="sw"><i style="background:#ece9e2"></i>Creme</span>
+          </div>
+        </div>
+      </div>
+      <div class="sign reveal" aria-label="Ladenschild Goldene Schere">
+        <svg class="badge-sign" viewBox="0 0 200 220" aria-hidden="true"><use href="#badge"/></svg>
+        <span class="wordmark"><span class="w">Goldene</span><svg aria-hidden="true"><use href="#tools"/></svg><span class="w">Schere</span></span>
+        <svg class="badge-sign" viewBox="0 0 200 220" aria-hidden="true"><use href="#badge"/></svg>
+      </div>
+      <p class="sign-cap reveal">Wie an unserer Fassade in der Oulustraße 5 – kommen Sie vorbei!</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="leistungen" class="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Leistungen &amp; Preise</span>
+          <h2>Unser <span class="gold-text">Angebot</span></h2>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="herren" role="tab">Herren</button>
+          <button class="tab" data-tab="bart" role="tab">Bart</button>
+          <button class="tab" data-tab="damen" role="tab">Damen &amp; Kinder</button>
+        </div>
+      </div>
+
+      <div class="price-panel active" id="herren">
+        <div class="price-row"><div><h3>Haarschnitt</h3><p>Waschen, Schneiden, Styling</p></div><i class="dots"></i><span class="price">ab 20 €</span></div>
+        <div class="price-row"><div><h3>Fade / Skin Fade</h3><p>Präziser Übergang bis auf die Haut</p></div><i class="dots"></i><span class="price">ab 23 €</span></div>
+        <div class="price-row"><div><h3>Maschinenschnitt</h3><p>Eine Länge, sauber nachgearbeitet</p></div><i class="dots"></i><span class="price">ab 14 €</span></div>
+        <div class="price-row"><div><h3>Haarschnitt + Bart</h3><p>Das Komplettpaket</p></div><i class="dots"></i><span class="price">ab 32 €</span></div>
+        <div class="price-row"><div><h3>Haarwäsche &amp; Styling</h3><p>Pflege und Finish</p></div><i class="dots"></i><span class="price">ab 10 €</span></div>
+        <div class="price-row"><div><h3>Färben / Grauabdeckung</h3><p>Natürlicher Look</p></div><i class="dots"></i><span class="price">ab 20 €</span></div>
+      </div>
+      <div class="price-panel" id="bart">
+        <div class="price-row"><div><h3>Bart trimmen</h3><p>Form &amp; Länge</p></div><i class="dots"></i><span class="price">ab 12 €</span></div>
+        <div class="price-row"><div><h3>Bart-Konturen</h3><p>Messer-Konturen, scharfe Linien</p></div><i class="dots"></i><span class="price">ab 10 €</span></div>
+        <div class="price-row"><div><h3>Nassrasur</h3><p>Klassisch mit heißem Handtuch</p></div><i class="dots"></i><span class="price">ab 18 €</span></div>
+        <div class="price-row"><div><h3>Bart färben</h3><p>Für ein gleichmäßiges Bild</p></div><i class="dots"></i><span class="price">ab 12 €</span></div>
+        <div class="price-row"><div><h3>Gesichtsbehandlung</h3><p>Maske, Dampf &amp; Pflege</p></div><i class="dots"></i><span class="price">ab 15 €</span></div>
+        <div class="price-row"><div><h3>Augenbrauen &amp; Wachs</h3><p>Nase, Ohren, Augenbrauen</p></div><i class="dots"></i><span class="price">ab 5 €</span></div>
+      </div>
+      <div class="price-panel" id="damen">
+        <div class="price-row"><div><h3>Damenhaarschnitt</h3><p>Waschen, Schneiden, Föhnen</p></div><i class="dots"></i><span class="price">ab 30 €</span></div>
+        <div class="price-row"><div><h3>Föhnen &amp; Styling</h3><p>Für jeden Anlass</p></div><i class="dots"></i><span class="price">ab 20 €</span></div>
+        <div class="price-row"><div><h3>Färben</h3><p>Ansatz oder komplett</p></div><i class="dots"></i><span class="price">ab 40 €</span></div>
+        <div class="price-row"><div><h3>Strähnen / Balayage</h3><p>Nach Beratung</p></div><i class="dots"></i><span class="price">auf Anfrage</span></div>
+        <div class="price-row"><div><h3>Kinder bis 12 Jahre</h3><p>Mit Geduld &amp; Spaß</p></div><i class="dots"></i><span class="price">ab 13 €</span></div>
+        <div class="price-row"><div><h3>Schüler &amp; Studenten</h3><p>Mit Ausweis</p></div><i class="dots"></i><span class="price">ab 17 €</span></div>
+      </div>
+      <p class="price-note reveal">* Preise als Beispiel – endgültige Preise nach Absprache mit dem Salon.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="galerie">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Galerie</span>
+          <h2>Einblicke in den <span class="gold-text">Salon</span></h2>
+        </div>
+        <a href="https://www.instagram.com/goldenescheere" target="_blank" rel="noopener" class="btn btn-ghost"><svg><use href="#insta"/></svg>@goldenescheere</a>
+      </div>
+      <div class="gallery reveal">
+        <div class="g tall"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=75" alt="Fade-Haarschnitt" loading="lazy"></div>
+        <div class="g wide"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=75" alt="Salon-Arbeitsplatz" loading="lazy"></div>
+        <div class="g"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=75" alt="Bartpflege" loading="lazy"></div>
+        <div class="g"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=75" alt="Salon Interior" loading="lazy"></div>
+        <div class="g wide"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=75" alt="Friseurwerkzeug" loading="lazy"></div>
+        <div class="g"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=700&q=75" alt="Haarschnitt Detail" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="bewertungen" class="reviews">
+    <div class="wrap reveal">
+      <span class="eyebrow">Bewertungen</span>
+      <div class="big-rating gold-text" style="margin-top:20px">4,6</div>
+      <div class="big-stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+      <p class="lead">Aus 83 Bewertungen auf Google – danke an alle unsere Kundinnen und Kunden für das Vertrauen!</p>
+      <div class="quote-row">
+        <div class="quote"><div class="q">“</div><h3>Freundlich &amp; persönlich</h3><p>Hier werden Sie mit Namen begrüßt und fühlen sich vom ersten Moment an wohl.</p></div>
+        <div class="quote"><div class="q">“</div><h3>Saubere Arbeit</h3><p>Präzise Übergänge und Konturen – genau so, wie Sie es sich wünschen.</p></div>
+        <div class="quote"><div class="q">“</div><h3>Faire Preise</h3><p>Top-Qualität zu ehrlichen Preisen, mitten in Leverkusen.</p></div>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Goldene+Schere+Oulustra%C3%9Fe+5+51375+Leverkusen" target="_blank" rel="noopener" class="btn btn-ghost">Alle Bewertungen auf Google</a>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="kontakt" class="visit">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:50px">
+        <span class="eyebrow">Besuchen Sie uns</span>
+        <h2>Öffnungszeiten &amp; <span class="gold-text">Kontakt</span></h2>
+      </div>
+      <div class="visit-grid">
+        <div class="card reveal">
+          <h3 style="font-size:1.9rem">Öffnungszeiten</h3>
+          <div class="status" id="status"><i></i><span>–</span></div>
+          <ul class="hours" id="hours"></ul>
+          <p class="price-note">* Beispielzeiten im Demo-Entwurf – bitte mit dem Salon abstimmen.</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="font-size:1.9rem">So erreichen Sie uns</h3>
+          <div class="contact-list">
+            <a href="tel:+492145008550"><span class="ic"><svg><use href="#phone"/></svg></span><span><small>Telefon</small><b>0214 5008550</b></span></a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Oulustra%C3%9Fe+5+51375+Leverkusen" target="_blank" rel="noopener"><span class="ic"><svg><use href="#pin"/></svg></span><span><small>Adresse</small><b>Oulustraße 5, 51375 Leverkusen</b></span></a>
+            <a href="https://www.instagram.com/goldenescheere" target="_blank" rel="noopener"><span class="ic"><svg><use href="#insta"/></svg></span><span><small>Instagram</small><b>@goldenescheere</b></span></a>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="tel:+492145008550" class="btn btn-gold"><svg><use href="#phone"/></svg>Jetzt anrufen</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Oulustra%C3%9Fe+5+51375+Leverkusen" target="_blank" rel="noopener" class="btn btn-ghost">Route planen</a>
+          </div>
+          <div class="map"><iframe title="Karte: Oulustraße 5, Leverkusen" loading="lazy" src="https://maps.google.com/maps?q=Oulustra%C3%9Fe%205%2C%2051375%20Leverkusen&z=16&output=embed"></iframe></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap reveal">
+      <span class="eyebrow">Bereit für einen neuen Look?</span>
+      <h2>Ihr Termin bei der<br><span class="gold-text">Goldenen Schere</span></h2>
+      <div class="hero-cta">
+        <a href="tel:+492145008550" class="btn btn-gold"><svg><use href="#phone"/></svg>0214 5008550</a>
+        <a href="https://www.instagram.com/goldenescheere" target="_blank" rel="noopener" class="btn btn-ghost"><svg><use href="#insta"/></svg>Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="brandline"><svg viewBox="0 0 200 220" aria-hidden="true"><use href="#badge"/></svg><span>© <span id="y"></span> Goldene Schere · Oulustraße 5 · 51375 Leverkusen</span></span>
+    <span style="font-size:.78rem;opacity:.8">Demo-Entwurf – keine offizielle Seite des Salons</span>
+    <nav><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="https://www.instagram.com/goldenescheere" target="_blank" rel="noopener">Instagram</a></nav>
+  </div>
+</footer>
+
+<a href="tel:+492145008550" class="fab" aria-label="Anrufen"><svg><use href="#phone"/></svg></a>
+
+<script>
+  // Nav
+  const nav=document.getElementById('nav'),links=document.getElementById('links'),burger=document.getElementById('burger');
+  const onScroll=()=>nav.classList.toggle('scrolled',scrollY>30);onScroll();addEventListener('scroll',onScroll,{passive:true});
+  burger.addEventListener('click',()=>{const o=links.classList.toggle('open');nav.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o)});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');nav.classList.remove('menu-open')}));
+
+  // Tabs
+  document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===t));
+    document.querySelectorAll('.price-panel').forEach(p=>p.classList.toggle('active',p.id===t.dataset.tab));
+  }));
+
+  // Hours (Beispielzeiten – bitte mit dem Salon abstimmen)
+  const H=[ // 0=So … 6=Sa
+    null,
+    null,
+    ['08:30','19:00'],
+    ['08:30','19:00'],
+    ['08:30','19:00'],
+    ['08:30','19:00'],
+    ['08:30','17:00'],
+  ];
+  const names=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+  const now=new Date(),d=now.getDay(),ul=document.getElementById('hours');
+  [1,2,3,4,5,6,0].forEach(i=>{
+    const li=document.createElement('li');if(i===d)li.className='today';
+    li.innerHTML=`<span>${names[i]}</span><span>${H[i]?H[i].join(' – ')+' Uhr':'Geschlossen'}</span>`;ul.appendChild(li);
+  });
+  const toMin=s=>{const[a,b]=s.split(':');return a*60+ +b};
+  const m=now.getHours()*60+now.getMinutes(),st=document.getElementById('status');
+  let txt;
+  if(H[d]&&m>=toMin(H[d][0])&&m<toMin(H[d][1])){st.classList.add('open');txt=`Jetzt geöffnet · bis ${H[d][1]} Uhr`}
+  else{
+    let k=1;while(k<8){const n=(d+k)%7; if(H[d]&&m<toMin(H[d][0])){txt=`Geschlossen · öffnet heute um ${H[d][0]} Uhr`;break} if(H[n]){txt=`Geschlossen · öffnet ${k===1?'morgen':names[n]} um ${H[n][0]} Uhr`;break}k++}
+  }
+  st.querySelector('span').textContent=txt;
+  document.getElementById('y').textContent=now.getFullYear();
+
+  // Reveal
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
