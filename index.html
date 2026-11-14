@@ -188,7 +188,14 @@
 
   /* CTA */
   .cta-band{padding:clamp(70px,9vw,110px) 0;text-align:center;position:relative;overflow:hidden}
-  .cta-band::before{content:"";position:absolute;inset:0;background:#120f0a url("img/herren-taper.jpg") center 35%/cover;opacity:.2;filter:grayscale(.3)}
+  .cta-band{background:
+    radial-gradient(ellipse 60% 70% at 50% 50%,rgba(243,197,53,.16),transparent 70%),
+    linear-gradient(180deg,var(--bg-2),#0a0907 100%);border-top:1px solid var(--line)}
+  .cta-band::before{content:"";position:absolute;inset:0;opacity:.5;background:
+    repeating-linear-gradient(115deg,transparent 0 46px,rgba(212,175,95,.07) 46px 47px)}
+  .cta-watermark{position:absolute;left:50%;top:50%;width:min(560px,120vw);height:auto;transform:translate(-50%,-50%) rotate(-8deg);opacity:.07;pointer-events:none}
+  .cta-band .wrap{z-index:1}
+  .cta-band .eyebrow::before{display:none}
   .cta-band .wrap{position:relative}
   .cta-band h2{font-size:clamp(2.4rem,6vw,4.4rem)}
   .cta-band .hero-cta{justify-content:center;margin-top:30px}
@@ -201,7 +208,28 @@
   /* Floating call button (mobile) */
   .fab{position:fixed;right:16px;bottom:16px;z-index:40;width:58px;height:58px;border-radius:50%;display:none;place-items:center;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#1a1408;box-shadow:0 12px 30px -8px rgba(212,175,95,.7)}
   .fab svg{width:24px;height:24px}
-  @media (max-width:700px){.fab{display:grid}}
+
+  /* Mobile Aktionsleiste */
+  .mbar{display:none}
+  @media (max-width:700px){
+    .mbar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:45;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:6px;padding:6px;border-radius:20px;background:rgba(16,14,11,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 18px 40px -12px rgba(0,0,0,.8);transform:translateY(140%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+    .mbar.show{transform:none}
+    .mbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:9px 4px;border-radius:14px;font-size:.72rem;font-weight:600;color:var(--text)}
+    .mbar a svg{width:20px;height:20px;color:var(--gold)}
+    .mbar a.call{flex-direction:row;gap:8px;font-size:.88rem;background:linear-gradient(135deg,var(--gold-2),var(--gold) 50%,var(--gold-3));color:#1a1408}
+    .mbar a.call svg{color:#1a1408}
+    footer{padding-bottom:110px}
+    section{padding:64px 0}
+    .sec-head{margin-bottom:34px}
+    .brand-stage{aspect-ratio:auto;padding:46px 0}
+    .brand-stage svg{width:170px}
+    .brand-stage .corner{display:none}
+    .swatches{gap:8px}.sw{padding:5px 10px 5px 5px;font-size:.75rem}.sw i{width:20px;height:20px}
+    .sign{margin-top:44px}
+    .about-img{aspect-ratio:4/4.4}
+    .hero-meta{gap:22px;margin-top:40px}
+    .hero-meta strong{font-size:1.8rem}
+  }
 
   /* ===== Logo / Brand ===== */
   :root{--sign-gold:#f3c535;--sign-orange:#e8892b}
@@ -458,7 +486,7 @@
   <section id="salon">
     <div class="wrap about-grid">
       <div class="about-img reveal">
-        <img src="img/herren-blond-fade.jpg" alt="Skin Fade mit Design-Linie – gemacht bei der Goldenen Schere" loading="lazy" style="object-position:50% 60%">
+        <img src="img/herren-blond-fade.jpg" srcset="img/herren-blond-fade-m.jpg 675w, img/herren-blond-fade.jpg 1284w" sizes="(max-width:900px) 100vw, 560px" decoding="async" alt="Skin Fade mit Design-Linie – gemacht bei der Goldenen Schere" loading="lazy" style="object-position:50% 60%">
         <div class="about-badge"><strong class="gold-text">4,6 ★</strong><span>aus 83 Google-Bewertungen</span></div>
       </div>
       <div class="reveal">
@@ -583,11 +611,11 @@
         </div>
       </div>
       <div class="works reveal">
-        <figure class="w-item" data-cat="herren"><img src="img/herren-blond-fade.jpg" alt="Skin Fade mit Design-Linie und blonden Spitzen" loading="lazy"><figcaption><small>Herren</small>Skin Fade &amp; Design-Linie</figcaption></figure>
-        <figure class="w-item" data-cat="damen"><img src="img/damen-locken.jpg" alt="Lange Locken mit Highlights" loading="lazy"><figcaption><small>Damen</small>Highlights &amp; Locken</figcaption></figure>
-        <figure class="w-item" data-cat="herren"><img src="img/herren-taper.jpg" alt="Klassischer Taper Fade" loading="lazy"><figcaption><small>Herren</small>Classic Taper</figcaption></figure>
-        <figure class="w-item" data-cat="damen"><img src="img/damen-balayage.jpg" alt="Rosé-Balayage mit Wellen" loading="lazy"><figcaption><small>Damen</small>Rosé-Balayage</figcaption></figure>
-        <figure class="w-item" data-cat="herren"><img src="img/herren-crop.jpg" alt="Textured Crop mit Low Taper" loading="lazy"><figcaption><small>Herren</small>Textured Crop</figcaption></figure>
+        <figure class="w-item" data-cat="herren"><img src="img/herren-blond-fade.jpg" srcset="img/herren-blond-fade-m.jpg 675w, img/herren-blond-fade.jpg 1284w" sizes="(max-width:900px) 50vw, 400px" decoding="async" alt="Skin Fade mit Design-Linie und blonden Spitzen" loading="lazy"><figcaption><small>Herren</small>Skin Fade &amp; Design-Linie</figcaption></figure>
+        <figure class="w-item" data-cat="damen"><img src="img/damen-locken.jpg" srcset="img/damen-locken-m.jpg 441w, img/damen-locken.jpg 1119w" sizes="(max-width:900px) 50vw, 400px" decoding="async" alt="Lange Locken mit Highlights" loading="lazy"><figcaption><small>Damen</small>Highlights &amp; Locken</figcaption></figure>
+        <figure class="w-item" data-cat="herren"><img src="img/herren-taper.jpg" srcset="img/herren-taper-m.jpg 673w, img/herren-taper.jpg 1270w" sizes="(max-width:900px) 50vw, 400px" decoding="async" alt="Klassischer Taper Fade" loading="lazy"><figcaption><small>Herren</small>Classic Taper</figcaption></figure>
+        <figure class="w-item" data-cat="damen"><img src="img/damen-balayage.jpg" srcset="img/damen-balayage-m.jpg 793w, img/damen-balayage.jpg 1241w" sizes="(max-width:900px) 50vw, 400px" decoding="async" alt="Rosé-Balayage mit Wellen" loading="lazy"><figcaption><small>Damen</small>Rosé-Balayage</figcaption></figure>
+        <figure class="w-item" data-cat="herren"><img src="img/herren-crop.jpg" srcset="img/herren-crop-m.jpg 645w, img/herren-crop.jpg 1192w" sizes="(max-width:900px) 50vw, 400px" decoding="async" alt="Textured Crop mit Low Taper" loading="lazy"><figcaption><small>Herren</small>Textured Crop</figcaption></figure>
       </div>
       <div style="text-align:center;margin-top:40px" class="reveal">
         <a href="https://www.instagram.com/goldenescheere" target="_blank" rel="noopener" class="btn btn-ghost"><svg><use href="#insta"/></svg>Mehr auf Instagram @goldenescheere</a>
@@ -660,6 +688,7 @@
 
   <!-- CTA -->
   <section class="cta-band">
+    <svg class="cta-watermark" viewBox="0 0 200 220" aria-hidden="true"><use href="#badge"/></svg>
     <div class="wrap reveal">
       <span class="eyebrow">Bereit für einen neuen Look?</span>
       <h2>Ihr Termin bei der<br><span class="gold-text">Goldenen Schere</span></h2>
@@ -679,7 +708,11 @@
   </div>
 </footer>
 
-<a href="tel:+492145008550" class="fab" aria-label="Anrufen"><svg><use href="#phone"/></svg></a>
+<nav class="mbar" id="mbar" aria-label="Schnellzugriff">
+  <a href="tel:+492145008550" class="call"><svg><use href="#phone"/></svg>Jetzt anrufen</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Oulustra%C3%9Fe+5+51375+Leverkusen" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Route</a>
+  <a href="https://www.instagram.com/goldenescheere" target="_blank" rel="noopener"><svg><use href="#insta"/></svg>Instagram</a>
+</nav>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildansicht"><button type="button" aria-label="Schließen">×</button><img alt=""></div>
 
 <script>
@@ -727,7 +760,9 @@
 
   // Scroll progress
   const bar=document.getElementById('progress');
-  addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+  const mbar=document.getElementById('mbar');
+  const onSc=()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';mbar.classList.toggle('show',h.scrollTop>window.innerHeight*.6)};
+  addEventListener('scroll',onSc,{passive:true});onSc();
 
   // Lightbox
   const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img');
