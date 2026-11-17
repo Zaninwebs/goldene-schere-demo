@@ -2,7 +2,7 @@
 
 Demo-Entwurf einer Webseite für den Friseursalon **Goldene Schere**, Oulustraße 5, 51375 Leverkusen.
 
-- Eine einzige statische Datei: `index.html` (kein Build nötig)
-- Hosting: Netlify (Publish directory: `.`)
+- Statische Seite: `index.html`, Bilder in `img/`, Video in `media/` (kein Build nötig)
+- Live: https://zaninwebs.github.io/goldene-schere-demo/
 
-> Hinweis: Preise und Öffnungszeiten (außer Mi ab 08:30) sind Beispielwerte. Fotos sind Stockbilder von Unsplash. Die Seite ist per `noindex` von Suchmaschinen ausgeschlossen.
+> Öffnungszeiten laut Instagram (Mo–Fr 8:30–18:30, Sa 8:30–15:00), Preise laut Aushang im Salon. Fotos und Video vom Instagram des Salons. Die Seite ist per `noindex` von Suchmaschinen ausgeschlossen.
